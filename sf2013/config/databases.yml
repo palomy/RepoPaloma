@@ -1,0 +1,14 @@
+all:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn: 'mysql:host=localhost;dbname=paloma'
+      username: paloma
+      password: paloma
+test:
+  Doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn: 'mysql:host=localhost;dbname=paloma_test' 
+      username: paloma
+      password: paloma

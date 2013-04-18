@@ -1,0 +1,58 @@
+Libro: 
+  columns:
+    nombre: { type: string(100), notnull: true }
+    titulo: { type: string(100) }
+    autor: { type: string(100) }
+    contenido: { type: string(1000) }
+    idioma: { type: string(100) }
+    nivel: { type: integer }
+    vocabulario_id: { type: integer}
+
+  relations:
+    Vocabulario:
+      local: vocabulario_id
+      foreign: id
+      foreignAlias: LibroVocabulario
+
+#Libro_vocabulario:
+#  columns: 
+#    id_libro { type: integer, primary: true }
+#    id_vocabulario { type: integer, primary: true }
+#  relations: 
+#    Libro: 
+#      local: id_libro
+#      foreign: id  
+#    Vocabulario: 
+#      local: id_vocabulario
+#      foreign: id
+
+Vocabulario:
+  columns:
+    nombre: { type: string(100), notnull: true }
+    idioma: { type: string(100) }
+    nivel: { type: integer }
+    palabra: { type: string(100) }
+    traduccion: { type: string(100) }
+
+Gramatica: 
+  columns:
+    nombre: { type: string(100), notnull: true }
+    idioma: { type: string(100) }
+    nivel: { type: integer }
+    enunciado: { type: string(500) }
+    solucion: { type: string(500) }
+    explicacion: { type: string(500) }
+
+Juego:
+  columns: 
+    nombre: { type: string(100), notnull: true }
+    idioma: { type: string(100) }
+    nivel: { type: integer }
+    ruta: { type: string(200) }
+
+Examen:
+  columns:
+    nombre: { type: string(100), notnull: true }
+    idioma: { type: string(100) }
+    nivel: { type: integer }
+    id_ejercicio: { type: integer }
